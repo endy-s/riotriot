@@ -1,0 +1,45 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+:root{
+  --orange:#ff4d1a; --lilac:#d9a8ff; --cream:#ece6d8; --ink:#1a1a1a;
+  --maxw:1040px;
+}
+html{ scroll-behavior:smooth; }
+body{ font-family:'JetBrains Mono',monospace; color:#fff; background:var(--ink); line-height:1.6; }
+img{ max-width:100%; display:block; }
+a{ color:inherit; }
+
+.container{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 22px; }
+
+/* full-width section bands */
+.section{ padding:56px 0; }
+.band-dark{ background:var(--ink); color:#f0ece2; }
+.band-cream{ background:var(--cream); color:var(--ink); }
+.band-orange{ background:var(--orange); color:#000; }
+
+.kicker{ font-family:'Anton',sans-serif; color:var(--orange); font-size:clamp(34px,7vw,52px);
+  font-style:italic; transform:skew(-4deg); margin-bottom:24px; line-height:1; }
+.band-cream .kicker{ color:var(--ink); }
+.band-orange .kicker{ color:#000; }
+
+/* NAV */
+.nav{ position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between;
+  background:rgba(26,26,26,.96); backdrop-filter:blur(6px); padding:12px 22px; border-bottom:2px solid var(--orange); }
+.nav-brand{ font-family:'Anton',sans-serif; font-style:italic; transform:skew(-4deg);
+  color:var(--orange); font-size:20px; text-decoration:none; letter-spacing:1px; }
+.nav-links{ display:flex; gap:18px; }
+.nav-links a{ color:#eee; text-decoration:none; font-size:13px; letter-spacing:1px; }
+.nav-links a:hover{ color:var(--orange); }
+.nav-toggle{ display:none; background:none; border:none; color:var(--orange); font-size:24px; cursor:pointer; }
+
+/* FOOTER */
+.footer{ background:#000; color:#999; text-align:center; padding:28px 22px; font-size:12px; }
+.footer a{ color:var(--orange); text-decoration:none; }
+
+/* MOBILE */
+@media (max-width:767px){
+  .nav-toggle{ display:block; }
+  .nav-links{ position:absolute; top:100%; left:0; right:0; flex-direction:column; gap:0;
+    background:var(--ink); border-bottom:2px solid var(--orange); display:none; }
+  .nav-links.open{ display:flex; }
+  .nav-links a{ padding:14px 22px; border-top:1px solid #333; }
+}
