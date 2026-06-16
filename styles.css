@@ -66,6 +66,14 @@ a{ color:inherit; }
 .hero-scroll{ position:absolute; bottom:18px; left:50%; transform:translateX(-50%); z-index:3;
   color:var(--orange); font-size:26px; text-decoration:none; animation:bob 1.6s infinite; }
 @keyframes bob{ 0%,100%{ transform:translateX(-50%) translateY(0);} 50%{ transform:translateX(-50%) translateY(7px);} }
+@media (max-width:767px){
+  .hero{ min-height:68vh; }
+  .hero-overlay{ padding:28px 16px; }
+  .hero-label{ letter-spacing:2px; font-size:10.5px; margin-bottom:12px; }
+  .hero-logo{ width:min(290px,86%); }
+  .hero-cta{ gap:10px; margin-top:22px; }
+  .hero-cta .btn{ padding:12px 22px; font-size:13px; }
+}
 
 .section p{ font-size:15px; }
 .members-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; max-width:780px; margin:0 auto; }
