@@ -84,7 +84,16 @@ a{ color:inherit; }
 .gallery img{ width:100%; aspect-ratio:4/3; object-fit:cover; border:2px solid var(--ink); border-radius:8px; }
 
 .plot{ margin-top:18px; }
-.plot svg, .plot-img{ width:100%; height:auto; border:3px solid #000; border-radius:10px; background:#fff; display:block; }
+.plot-img{ width:100%; height:auto; border-radius:10px; display:block; }
+.plot-tecnico{ border:3px solid #000; background:#fff; }
+.plot-ilustrado{ border:1px solid #333; }
+.plot-img[hidden]{ display:none; }
+.plot-switch{ display:flex; width:max-content; max-width:100%; margin:16px auto 14px;
+  border:2px solid var(--orange); border-radius:9px; overflow:hidden; }
+.seg{ background:transparent; color:#f0ece2; border:none; font-family:'JetBrains Mono',monospace;
+  font-size:13px; font-weight:700; letter-spacing:1px; padding:10px 22px; cursor:pointer; transition:background .15s; }
+.seg:not(.active):hover{ background:rgba(255,77,26,.18); }
+.seg.active{ background:var(--orange); color:#000; }
 .sub-h{ font-size:14px; font-weight:700; margin:26px 0 8px; letter-spacing:1px; color:#fff; }
 .inputs{ width:100%; border-collapse:collapse; font-size:13px; background:#fff; color:#222; border-radius:6px; overflow:hidden; }
 .inputs th{ background:#000; color:#fff; text-align:left; padding:8px 10px; font-size:11px; letter-spacing:1px; }
@@ -101,3 +110,12 @@ a{ color:inherit; }
 .contact-item .ic{ background:#000; color:var(--orange); width:36px; height:36px; border-radius:9px;
   display:flex; align-items:center; justify-content:center; font-size:18px; flex:0 0 36px; }
 .contact-item:hover{ text-decoration:underline; }
+
+/* Ao Vivo lightbox */
+.gallery img{ cursor:zoom-in; }
+.lightbox{ position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center;
+  background:rgba(0,0,0,.93); padding:24px; cursor:zoom-out; }
+.lightbox[hidden]{ display:none; }
+.lightbox-img{ max-width:95vw; max-height:90vh; width:auto; height:auto; border:2px solid #333; border-radius:6px; cursor:default; }
+.lightbox-close{ position:absolute; top:12px; right:20px; background:none; border:none; color:#fff;
+  font-size:40px; line-height:1; cursor:pointer; }

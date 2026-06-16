@@ -125,8 +125,13 @@
     <div class="container">
       <h2 class="kicker">TÉCNICO / PRODUÇÃO</h2>
       <p>Mapa de palco, input list e modos de operação para facilitar a produção do show.</p>
+      <div class="plot-switch" role="group" aria-label="Tipo de mapa de palco">
+        <button type="button" class="seg active" data-view="ilustrado">Ilustrado</button>
+        <button type="button" class="seg" data-view="tecnico">Técnico</button>
+      </div>
       <div class="plot">
-        <img class="plot-img" src="assets/stageplot.svg" alt="Mapa de palco — Riot! Riot!">
+        <img class="plot-img plot-ilustrado" src="assets/img/stageplot-ilustrado.jpg" alt="Mapa de palco ilustrado — posições dos instrumentos no palco" loading="lazy">
+        <img class="plot-img plot-tecnico" src="assets/stageplot.svg" alt="Mapa de palco técnico — canais de entrada numerados" loading="lazy" hidden>
       </div>
       <h3 class="sub-h">INPUT LIST</h3>
       <table class="inputs">
@@ -164,6 +169,11 @@
   <p>RIOT! RIOT! · Paramore Cover · Floripa</p>
   <p><a href="https://instagram.com/riotriot.oficial">@riotriot.oficial</a> · <a href="https://linktr.ee/riotriot.oficial">Linktree</a></p>
 </footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" type="button" aria-label="Fechar">&times;</button>
+  <img class="lightbox-img" src="" alt="">
+</div>
 
 <script src="main.js"></script>
 </body>
