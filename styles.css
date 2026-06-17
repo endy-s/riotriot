@@ -78,8 +78,10 @@ a{ color:inherit; }
 @media (max-width:480px){ .members-grid{ gap:30px; } .member{ width:100%; max-width:340px; }
   /* one-by-one (mobile) order: Vocal, Guit Base, Guit Solo, Baixo, Bateria */
   .member:nth-child(2){ order:-1; } }
-.member img{ width:95%; max-width:none; margin:0; aspect-ratio:3/4; object-fit:cover;
-  border:3px solid #fff; box-shadow:7px 7px 0 var(--lilac); }
+.m-photo-link{ display:block; width:95%; cursor:pointer; }
+.member img{ width:100%; max-width:none; margin:0; aspect-ratio:3/4; object-fit:cover;
+  border:3px solid #fff; box-shadow:7px 7px 0 var(--lilac); transition:transform .18s, box-shadow .18s; }
+.m-photo-link:hover img{ transform:translate(-3px,-3px); box-shadow:10px 10px 0 var(--lilac); }
 .m-photo-soon{ width:95%; max-width:none; margin:0 auto; aspect-ratio:3/4; border:3px solid #fff; box-shadow:4px 4px 0 rgba(0,0,0,.25);
   background:var(--ink); color:var(--orange); display:flex; align-items:center; justify-content:center;
   text-align:center; font-family:'Anton',sans-serif; font-size:clamp(18px,2.4vw,24px); line-height:1.05; letter-spacing:1px; }

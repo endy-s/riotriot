@@ -11,6 +11,13 @@ links.querySelectorAll('a').forEach(a =>
   })
 );
 
+// Logo → scroll to the very top (the sticky header + scroll-padding-top make #top fall short)
+const navBrand = document.querySelector('.nav-brand');
+if (navBrand) navBrand.addEventListener('click', e => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 // Técnico: segmented control switching stage-plot views
 const segs = document.querySelectorAll('#tecnico .plot-switch .seg');
 if (segs.length) {
