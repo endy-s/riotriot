@@ -40,13 +40,3 @@ if (lb) {
   lb.addEventListener('click', e => { if (e.target !== lbImg) closeLb(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !lb.hidden) closeLb(); });
 }
-
-// Membros: TEMP photo-size A/B toggle (compacto vs largo) — remove once a size is chosen
-const mSegs = document.querySelectorAll('.members-switch .seg');
-if (mSegs.length) {
-  const mGrid = document.querySelector('.members-grid');
-  mSegs.forEach(btn => btn.addEventListener('click', () => {
-    mSegs.forEach(b => b.classList.toggle('active', b === btn));
-    if (mGrid) mGrid.classList.toggle('largo', btn.dataset.msize === 'largo');
-  }));
-}

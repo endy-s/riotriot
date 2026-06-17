@@ -80,13 +80,11 @@ a{ color:inherit; }
 .member{ width:calc(33.333% - 28px); max-width:300px; text-align:center; }
 @media (max-width:780px){ .member{ width:calc(50% - 22px); max-width:360px; } }
 @media (max-width:480px){ .members-grid{ gap:30px; } .member{ width:100%; max-width:340px; } }
-.member img{ width:100%; max-width:200px; margin:0 auto; aspect-ratio:3/4; object-fit:cover; filter:grayscale(1) contrast(1.05);
+.member img{ width:95%; max-width:none; margin:0 auto; aspect-ratio:3/4; object-fit:cover; filter:grayscale(1) contrast(1.05);
   border:3px solid #fff; box-shadow:4px 4px 0 rgba(0,0,0,.25); }
-.m-photo-soon{ width:100%; max-width:200px; margin:0 auto; aspect-ratio:3/4; border:3px solid #fff; box-shadow:4px 4px 0 rgba(0,0,0,.25);
+.m-photo-soon{ width:95%; max-width:none; margin:0 auto; aspect-ratio:3/4; border:3px solid #fff; box-shadow:4px 4px 0 rgba(0,0,0,.25);
   background:var(--ink); color:var(--orange); display:flex; align-items:center; justify-content:center;
   text-align:center; font-family:'Anton',sans-serif; font-size:clamp(18px,2.4vw,24px); line-height:1.05; letter-spacing:1px; }
-.members-switch{ margin-bottom:30px; }
-.members-grid.largo .member img, .members-grid.largo .m-photo-soon{ max-width:none; }
 .m-name{ display:inline-block; background:#000; color:#fff; font-size:17px; padding:3px 10px; margin-top:12px; }
 .m-role{ display:inline-block; background:var(--orange); color:#000; font-size:12px; font-weight:700; padding:3px 10px; margin:6px 0 8px; }
 .m-bio{ font-size:13px; line-height:1.55; color:#222; }
