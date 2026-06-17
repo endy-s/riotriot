@@ -134,4 +134,10 @@ a{ color:inherit; }
 .lightbox[hidden]{ display:none; }
 .lightbox-img{ max-width:95vw; max-height:90vh; width:auto; height:auto; border:2px solid #333; border-radius:6px; cursor:default; }
 .lightbox-close{ position:absolute; top:12px; right:20px; background:none; border:none; color:#fff;
-  font-size:40px; line-height:1; cursor:pointer; }
+  font-size:40px; line-height:1; cursor:pointer; z-index:2; }
+.lightbox-prev, .lightbox-next{ position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+  background:rgba(0,0,0,.4); border:none; color:#fff; font-size:44px; line-height:1; width:56px; height:84px;
+  display:flex; align-items:center; justify-content:center; cursor:pointer; border-radius:8px; }
+.lightbox-prev{ left:10px; } .lightbox-next{ right:10px; }
+.lightbox-prev:hover, .lightbox-next:hover{ background:rgba(255,77,26,.65); }
+@media (max-width:560px){ .lightbox-prev, .lightbox-next{ width:44px; height:64px; font-size:34px; } }
