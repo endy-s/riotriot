@@ -6,7 +6,7 @@
 W, H = 1000, 760
 STAGE_X, STAGE_Y, STAGE_W, STAGE_H = 40, 70, 920, 600
 
-INK="#1a1a1a"; ORANGE="#ff4d1a"; LILAC="#d9a8ff"; CREAM="#ece6d8"; GREY="#bbb"
+INK="#1a1a1a"; ORANGE="#ff5b29"; LILAC="#d9a8ff"; CREAM="#ece6d8"; GREY="#bbb"
 
 svg = []
 svg.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="Arial, sans-serif">')
