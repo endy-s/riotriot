@@ -18,8 +18,8 @@
     border-radius:12px; overflow:hidden; box-shadow:0 10px 40px rgba(0,0,0,.10); }
 
   /* header bar — dark like the site nav so the orange logo pops */
-  .doc-head{ background:var(--ink); color:#fff; padding:26px 34px; }
-  .doc-head img{ height:34px; width:auto; display:block; margin-bottom:16px; }
+  .doc-head{ background:var(--ink); color:#fff; padding:26px 34px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+  .doc-head-logo{ height:80px; width:auto; display:block; flex:0 0 auto; }
   .doc-head h1{ font-family:'Anton',sans-serif; font-weight:400; color:var(--orange);
     font-size:34px; letter-spacing:1px; line-height:1; }
   .doc-head .sub{ font-size:13px; color:#cfc8b8; margin-top:6px; letter-spacing:1px; }
@@ -68,7 +68,7 @@
   .doc-foot a{ color:var(--orange); text-decoration:none; font-weight:700; }
 
   /* print button */
-  .print-btn{ position:fixed; top:18px; right:18px; z-index:10; background:var(--orange); color:#000;
+  .print-btn{ position:fixed; bottom:18px; right:18px; z-index:10; background:var(--orange); color:#000;
     border:none; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:13px; letter-spacing:1px;
     padding:11px 18px; border-radius:8px; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.2); }
   .print-btn:hover{ filter:brightness(1.08); }
@@ -77,8 +77,10 @@
     body{ padding:0; }
     .doc{ border-radius:0; border:none; box-shadow:none; }
     .doc-head,.doc-body,.doc-foot{ padding-left:18px; padding-right:18px; }
+    .doc-head h1{ font-size:25px; }
+    .doc-head-logo{ height:54px; }
     .facts{ grid-template-columns:1fr; }
-    .print-btn{ top:10px; right:10px; padding:9px 13px; font-size:12px; }
+    .print-btn{ bottom:12px; right:12px; padding:9px 13px; font-size:12px; }
   }
 
   @media print{
@@ -100,10 +102,12 @@
 
 <div class="doc">
   <div class="doc-head">
-    <img src="assets/img/logo-horizontal.png" alt="Riot! Riot!">
-    <h1>RIDER TÉCNICO</h1>
-    <div class="sub">Riot! Riot! — Paramore Cover · Florianópolis/SC</div>
-    <div class="meta">Formação: 5 músicos (voz · 2 guitarras · baixo · bateria) &nbsp;·&nbsp; Estilo: pop-rock / Paramore (cover) &nbsp;·&nbsp; v1.0 — junho/2026</div>
+    <div class="doc-head-text">
+      <h1>RIDER TÉCNICO</h1>
+      <div class="sub">Riot! Riot! — Paramore Cover · Florianópolis/SC</div>
+      <div class="meta">Junho/26</div>
+    </div>
+    <img class="doc-head-logo" src="assets/img/logo-vertical.png" alt="Riot! Riot!">
   </div>
 
   <div class="doc-body">
@@ -112,10 +116,10 @@
       <h2><span class="n">1</span> Informações gerais</h2>
       <div class="facts">
         <div><span>Formação:</span> 5 músicos</div>
-        <div><span>Estilo:</span> Pop-rock / Paramore (cover)</div>
-        <div><span>Duração do show:</span> 60–90 min <span class="combinar">(a combinar)</span></div>
-        <div><span>Passagem de som:</span> 45–60 min</div>
-        <div><span>Montagem / desmontagem:</span> ~30 min cada</div>
+        <div><span>Estilo:</span> Pop-rock / pop-punk</div>
+        <div><span>Duração do show:</span> 60–180 min <span class="combinar">(a combinar)</span></div>
+        <div><span>Passagem de som:</span> ±45 min</div>
+        <div><span>Montagem / desmontagem:</span> ±45 min cada</div>
         <div><span>Canais de palco:</span> 13 (ver Input List)</div>
       </div>
       <p style="margin-top:12px"><span class="tag">⚡ OPERAÇÃO FLEXÍVEL</span> Tocamos com amplificadores no palco <b>ou</b> tudo em linha (DI), com o sinal saindo direto das pedaleiras de guitarras e baixo — ideal para palcos menores e monitoração via in-ear.</p>
@@ -124,10 +128,10 @@
     <section>
       <h2><span class="n">2</span> Contato de produção</h2>
       <ul>
+        <li><b>Responsável:</b> Endy Silveira (guitarra solo)</li>
         <li><b>WhatsApp:</b> +55 48 99903-0613</li>
         <li><b>E-mail:</b> bandariotfloripa@gmail.com</li>
         <li><b>Instagram:</b> @riotriot.oficial</li>
-        <li class="muted">Responsável técnico no palco a combinar na confirmação do show.</li>
       </ul>
     </section>
 
@@ -135,10 +139,8 @@
       <h2><span class="n">3</span> PA &amp; estrutura — fornecido pela contratante</h2>
       <ul>
         <li><b>Sistema de PA</b> profissional compatível com o local (cobertura homogênea + subgraves), operado por técnico da casa.</li>
-        <li><b>Mesa de som</b> (preferencialmente digital) com no mínimo <b>16 canais</b> e <b>5 vias de monitor</b> (auxiliares) independentes.</li>
-        <li><b>Microfones, pedestais (girafas) e clamps</b> conforme o Input List.</li>
-        <li><b>Direct boxes (DI):</b> mínimo 3 — 1 baixo + 2 guitarras — quando a captação for em linha.</li>
-        <li><b>Praticável de bateria</b> (opcional, conforme o palco).</li>
+        <li><b>Mesa de som</b> digital — <b>mín. 16 canais</b> e <b>5 vias de monitor</b> (auxiliares). A banda pode levar a própria; <span class="combinar">a combinar com a casa</span>.</li>
+        <li><b>Praticável de bateria</b> — se a casa tiver; caso contrário, levamos o nosso (comunicar com antecedência).</li>
         <li><b>Iluminação</b> básica de palco. <span class="combinar">(a combinar)</span></li>
       </ul>
     </section>
@@ -147,7 +149,8 @@
       <h2><span class="n">4</span> Backline</h2>
       <h3>A banda traz</h3>
       <ul>
-        <li>Instrumentos (guitarras, baixo) e <b>pedaleiras</b> com saída em linha/DI.</li>
+        <li>Instrumentos e <b>pedaleiras</b> — o sinal de guitarras e baixo sai pronto para a mesa, <b>sem necessidade de DI da casa</b>.</li>
+        <li><b>Microfones, pedestais e clamps</b> próprios (ou usamos os da casa, se preferir).</li>
         <li>In-ears próprios, quando aplicável.</li>
       </ul>
       <h3>Necessário no palco <span class="combinar">(a combinar com a produção)</span></h3>
