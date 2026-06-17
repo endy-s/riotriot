@@ -49,17 +49,3 @@ if (lb) {
     else if (e.key === 'ArrowLeft') show(idx - 1);
   });
 }
-
-// Membros: TEMP lighting test toggle (Atuais vs Mais claras) — remove after Endy decides
-const lSegs = document.querySelectorAll('.lighting-switch .seg');
-if (lSegs.length) {
-  const lImgs = document.querySelectorAll('.member img[data-light]');
-  lSegs.forEach(btn => btn.addEventListener('click', () => {
-    lSegs.forEach(b => b.classList.toggle('active', b === btn));
-    const light = btn.dataset.mode === 'light';
-    lImgs.forEach(img => {
-      if (!img.dataset.normal) img.dataset.normal = img.getAttribute('src');
-      img.setAttribute('src', light ? img.dataset.light : img.dataset.normal);
-    });
-  }));
-}
