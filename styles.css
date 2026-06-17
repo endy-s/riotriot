@@ -3,7 +3,7 @@
   --orange:#ff5b29; --lilac:#d9a8ff; --cream:#ece6d8; --ink:#1a1a1a;
   --maxw:1040px;
 }
-html{ scroll-behavior:smooth; scroll-padding-top:80px; }
+html{ scroll-behavior:smooth; scroll-padding-top:70px; }
 body{ font-family:'JetBrains Mono',monospace; color:#fff; background:var(--ink); line-height:1.6; }
 img{ max-width:100%; display:block; }
 a{ color:inherit; }
@@ -122,6 +122,9 @@ a{ color:inherit; }
 .contact-item .ic{ background:#000; color:var(--orange); width:36px; height:36px; border-radius:9px;
   display:flex; align-items:center; justify-content:center; font-size:18px; flex:0 0 36px; }
 .contact-item:hover{ text-decoration:underline; }
+.wa-btn{ background:#25D366; color:#fff; margin-top:26px; display:inline-flex; align-items:center; gap:8px; }
+.wa-btn:hover{ filter:brightness(1.05); }
+.lighting-switch{ margin-bottom:26px; }
 
 /* Ao Vivo lightbox */
 .gallery img{ cursor:zoom-in; }
