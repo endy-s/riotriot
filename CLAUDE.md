@@ -11,6 +11,7 @@ Audience: show producers/bookers + fans. **Language: Brazilian Portuguese only.*
 ## Stack & files
 - Plain **static HTML + CSS + vanilla JS**. No framework, no bundler, no build.
 - `index.html` — the whole page (all content/copy).
+- `rider.html` — unlisted technical rider served at `/rider` (`noindex`, no menu link); print-to-PDF. **Keep its content in sync with the site's Técnico section (input list / stage info); if they conflict, the most-recently-edited file wins.**
 - `styles.css` — all styles (brand vars in `:root`).
 - `main.js` — nav hamburger toggle, Técnico segmented control (Ilustrado/Técnico), Ao Vivo lightbox with prev/next (arrows + ←/→ keys + Esc). Smooth scroll is CSS (`scroll-behavior`).
 - `assets/img/` — photos & logos. `assets/stageplot.svg` — technical stage plot. `stageplot.py` — generator for that SVG.
