@@ -12,7 +12,7 @@ links.querySelectorAll('a').forEach(a =>
 );
 
 // Técnico: segmented control switching stage-plot views
-const segs = document.querySelectorAll('.plot-switch .seg');
+const segs = document.querySelectorAll('#tecnico .plot-switch .seg');
 if (segs.length) {
   const ilus = document.querySelector('.plot-ilustrado');
   const tec = document.querySelector('.plot-tecnico');
@@ -39,4 +39,14 @@ if (lb) {
   );
   lb.addEventListener('click', e => { if (e.target !== lbImg) closeLb(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !lb.hidden) closeLb(); });
+}
+
+// Membros: TEMP photo-size A/B toggle (compacto vs largo) — remove once a size is chosen
+const mSegs = document.querySelectorAll('.members-switch .seg');
+if (mSegs.length) {
+  const mGrid = document.querySelector('.members-grid');
+  mSegs.forEach(btn => btn.addEventListener('click', () => {
+    mSegs.forEach(b => b.classList.toggle('active', b === btn));
+    if (mGrid) mGrid.classList.toggle('largo', btn.dataset.msize === 'largo');
+  }));
 }
