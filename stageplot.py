@@ -98,12 +98,12 @@ y_front = STAGE_Y + 430   # mics
 content=[]
 
 # --- amps no fundo ---
-content.append(amp(cx1-42, y_back, "Guitarra base", 3))
-content.append(amp(cx4-42, y_back, "Guitarra solo", 7))
+content.append(amp(cx1-42, y_back, "Guitarra base", 4))
+content.append(amp(cx4-42, y_back, "Guitarra solo", 6))
 content.append(amp(cx2-42, y_back, "Baixo", 5))
 
 # bateria (coluna 3, fundo)
-content.append(drumkit(cx3, y_back+30, 1))
+content.append(drumkit(cx3, y_back+30, 7))
 
 # --- músicos linha do meio ---
 content.append(musician(cx1, y_mid, "GUIT.", "base + back vocal"))
@@ -114,9 +114,9 @@ content.append(musician(cx3, y_mid+120, "VOCAL", "à frente do palco"))
 
 # --- mics frente ---
 # mic compartilhado entre base e baixo (entre cx1 e cx2)
-content.append(micstand((cx1+cx2)//2, y_front, "Mic compartilhado (base+baixo)", 4))
-content.append(micstand(cx3, y_front+30, "Mic vocal", 2))
-content.append(micstand(cx4, y_front, "Mic guit. solo", 6))
+content.append(micstand((cx1+cx2)//2, y_front, "Mic compartilhado (base+baixo)", 2))
+content.append(micstand(cx3, y_front+30, "Mic vocal", 1))
+content.append(micstand(cx4, y_front, "Mic guit. solo", 3))
 
 svg.extend(content)
 
