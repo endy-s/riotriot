@@ -1,10 +1,12 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 :root{
   --orange:#ff5b29; --lilac:#d9a8ff; --cream:#ece6d8; --ink:#1a1a1a;
+  --mono:'JetBrains Mono',monospace;
   --maxw:1040px;
 }
 html{ scroll-behavior:smooth; }
-body{ font-family:'JetBrains Mono',monospace; color:#fff; background:var(--ink); line-height:1.6; }
+body{ font-family:var(--mono); color:#fff; background:var(--ink); line-height:1.6; }
+body.font-roboto{ --mono:'Roboto Mono',monospace; }
 img{ max-width:100%; display:block; }
 a{ color:inherit; }
 
@@ -46,9 +48,7 @@ a{ color:inherit; }
 
 /* HERO */
 .hero{ position:relative; min-height:88vh; min-height:88dvh; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#000; }
-.hero-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.7; }
-.hero-scrim{ position:absolute; inset:0; z-index:1;
-  background:radial-gradient(ellipse 85% 75% at 50% 45%, rgba(0,0,0,.32), rgba(0,0,0,.8)); }
+.hero-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .hero-overlay{ position:relative; z-index:2; width:100%; text-align:center; padding:40px 22px; }
 .hero-title{ margin:0; }
 .hero-logo{ width:min(380px,80%); height:auto; margin:0 auto; display:block;
@@ -103,10 +103,12 @@ a{ color:inherit; }
 .plot-img[hidden]{ display:none; }
 .plot-switch{ display:flex; width:max-content; max-width:100%; margin:16px auto 14px;
   border:2px solid var(--orange); border-radius:9px; overflow:hidden; }
-.seg{ background:transparent; color:#f0ece2; border:none; font-family:'JetBrains Mono',monospace;
+.seg{ background:transparent; color:#f0ece2; border:none; font-family:var(--mono);
   font-size:13px; font-weight:700; letter-spacing:1px; padding:10px 22px; cursor:pointer; transition:background .15s; }
 .seg:not(.active):hover{ background:rgba(255,91,41,.18); }
 .seg.active{ background:var(--orange); color:#000; }
+.font-switch{ position:fixed; bottom:16px; left:50%; transform:translateX(-50%); z-index:200;
+  display:flex; border:2px solid var(--orange); border-radius:9px; overflow:hidden; background:rgba(26,26,26,.95); box-shadow:0 4px 16px rgba(0,0,0,.4); }
 .sub-h{ font-size:14px; font-weight:700; margin:26px 0 8px; letter-spacing:1px; color:#fff; }
 .inputs{ width:100%; border-collapse:collapse; font-size:13px; background:#fff; color:#222; border-radius:6px; overflow:hidden; }
 .inputs th{ background:#000; color:#fff; text-align:left; padding:8px 10px; font-size:11px; letter-spacing:1px; }

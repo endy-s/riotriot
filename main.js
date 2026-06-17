@@ -49,3 +49,10 @@ if (lb) {
     else if (e.key === 'ArrowLeft') show(idx - 1);
   });
 }
+
+// Font test toggle (JetBrains vs Roboto Mono) — TEMP, remove once a font is chosen
+const fSegs = document.querySelectorAll('.font-switch .seg');
+fSegs.forEach(btn => btn.addEventListener('click', () => {
+  fSegs.forEach(b => b.classList.toggle('active', b === btn));
+  document.body.classList.toggle('font-roboto', btn.dataset.font === 'roboto');
+}));

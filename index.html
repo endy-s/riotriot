@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,7 +31,6 @@
 <main>
   <section class="hero" id="hero">
     <img class="hero-bg" src="assets/img/hero.jpg" alt="Riot! Riot! ao vivo no palco">
-    <div class="hero-scrim"></div>
     <div class="hero-overlay container">
       <h1 class="hero-title"><img class="hero-logo" src="assets/img/logo-vertical.png" alt="Riot! Riot!"></h1>
       <span class="hero-label">PARAMORE COVER &bull; FLORIANÓPOLIS</span>
@@ -165,6 +164,11 @@
   <p>RIOT! RIOT! · Paramore Cover · Florianópolis</p>
   <p><a href="https://instagram.com/riotriot.oficial">@riotriot.oficial</a> · <a href="https://linktr.ee/riotriot.oficial">Linktree</a></p>
 </footer>
+
+<div class="font-switch" role="group" aria-label="Testar fonte (teste)">
+  <button type="button" class="seg active" data-font="jetbrains">JetBrains</button>
+  <button type="button" class="seg" data-font="roboto">Roboto Mono</button>
+</div>
 
 <div class="lightbox" id="lightbox" hidden>
   <button class="lightbox-close" type="button" aria-label="Fechar">&times;</button>
