@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Rider Técnico — Riot! Riot!</title>
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --orange:#ff5b29; --lilac:#d9a8ff; --cream:#ece6d8; --ink:#1a1a1a; --line:#d8d2c4; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ font-family:'JetBrains Mono',monospace; color:var(--ink); background:var(--cream);
+    line-height:1.6; padding:28px 16px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .doc{ max-width:880px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:12px; overflow:hidden; box-shadow:0 10px 40px rgba(0,0,0,.10); }
+
+  /* header bar — dark like the site nav so the orange logo pops */
+  .doc-head{ background:var(--ink); color:#fff; padding:26px 34px; }
+  .doc-head img{ height:34px; width:auto; display:block; margin-bottom:16px; }
+  .doc-head h1{ font-family:'Anton',sans-serif; font-weight:400; color:var(--orange);
+    font-size:34px; letter-spacing:1px; line-height:1; }
+  .doc-head .sub{ font-size:13px; color:#cfc8b8; margin-top:6px; letter-spacing:1px; }
+  .doc-head .meta{ font-size:12px; color:#9a9486; margin-top:14px; }
+
+  .doc-body{ padding:30px 34px 38px; }
+  section{ margin-bottom:30px; }
+  h2{ font-family:'Anton',sans-serif; font-weight:400; color:var(--orange); font-size:21px;
+    letter-spacing:1px; padding-bottom:6px; border-bottom:2px solid var(--orange); margin-bottom:14px;
+    display:flex; align-items:baseline; gap:10px; }
+  h2 .n{ font-size:14px; color:var(--ink); background:var(--orange); color:#000; border-radius:5px;
+    padding:1px 8px; font-family:'JetBrains Mono',monospace; font-weight:700; }
+  h3{ font-size:13px; font-weight:700; letter-spacing:1px; margin:14px 0 6px; text-transform:uppercase; color:#444; }
+  p{ font-size:13.5px; margin-bottom:8px; }
+  ul{ list-style:none; font-size:13.5px; }
+  li{ padding:4px 0 4px 20px; position:relative; }
+  li::before{ content:'▸'; color:var(--orange); position:absolute; left:0; font-weight:700; }
+  li b{ color:var(--ink); }
+  .muted{ color:#7a7468; }
+  .tag{ display:inline-block; background:var(--ink); color:var(--lilac); font-size:11px; font-weight:700;
+    padding:2px 8px; border-radius:5px; letter-spacing:1px; vertical-align:middle; }
+  .combinar{ font-style:italic; color:#9a7b00; }
+
+  /* fact grid */
+  .facts{ display:grid; grid-template-columns:repeat(2,1fr); gap:8px 26px; font-size:13.5px; }
+  .facts div{ padding:5px 0; border-bottom:1px dashed var(--line); }
+  .facts span{ color:#7a7468; }
+
+  /* tables */
+  .tw{ width:100%; overflow-x:auto; }
+  table{ width:100%; border-collapse:collapse; font-size:12.5px; min-width:560px; }
+  th{ background:var(--ink); color:#fff; text-align:left; padding:8px 9px; font-size:11px; letter-spacing:.5px; }
+  td{ border-bottom:1px solid var(--line); padding:7px 9px; vertical-align:top; }
+  td.n{ font-weight:700; color:var(--orange); text-align:center; width:30px; }
+  tr:nth-child(even) td{ background:#faf8f3; }
+  .dash{ color:#b5ae9e; }
+
+  /* stage plot */
+  .plot{ margin-top:10px; }
+  .plot img{ width:100%; height:auto; border:2px solid var(--line); border-radius:8px; display:block; }
+  .plot .cap{ font-size:12px; color:#7a7468; margin-top:6px; text-align:center; }
+
+  /* footer */
+  .doc-foot{ background:var(--cream); border-top:1px solid var(--line); padding:18px 34px;
+    font-size:12px; color:#7a7468; text-align:center; }
+  .doc-foot a{ color:var(--orange); text-decoration:none; font-weight:700; }
+
+  /* print button */
+  .print-btn{ position:fixed; top:18px; right:18px; z-index:10; background:var(--orange); color:#000;
+    border:none; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:13px; letter-spacing:1px;
+    padding:11px 18px; border-radius:8px; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.2); }
+  .print-btn:hover{ filter:brightness(1.08); }
+
+  @media (max-width:560px){
+    body{ padding:0; }
+    .doc{ border-radius:0; border:none; box-shadow:none; }
+    .doc-head,.doc-body,.doc-foot{ padding-left:18px; padding-right:18px; }
+    .facts{ grid-template-columns:1fr; }
+    .print-btn{ top:10px; right:10px; padding:9px 13px; font-size:12px; }
+  }
+
+  @media print{
+    body{ background:#fff; padding:0; }
+    .doc{ box-shadow:none; border:none; border-radius:0; max-width:none; }
+    .print-btn{ display:none; }
+    .tw{ overflow:visible; }
+    table{ min-width:0; }
+    section, tr, .plot, .facts{ page-break-inside:avoid; }
+    h2{ page-break-after:avoid; }
+    .doc-head{ padding:18px 0; }
+    .doc-body{ padding:18px 0; }
+    .doc-foot{ background:#fff; }
+  }
+</style>
+</head>
+<body>
+<button class="print-btn" onclick="window.print()">🖨 Salvar PDF</button>
+
+<div class="doc">
+  <div class="doc-head">
+    <img src="assets/img/logo-horizontal.png" alt="Riot! Riot!">
+    <h1>RIDER TÉCNICO</h1>
+    <div class="sub">Riot! Riot! — Paramore Cover · Florianópolis/SC</div>
+    <div class="meta">Formação: 5 músicos (voz · 2 guitarras · baixo · bateria) &nbsp;·&nbsp; Estilo: pop-rock / Paramore (cover) &nbsp;·&nbsp; v1.0 — junho/2026</div>
+  </div>
+
+  <div class="doc-body">
+
+    <section>
+      <h2><span class="n">1</span> Informações gerais</h2>
+      <div class="facts">
+        <div><span>Formação:</span> 5 músicos</div>
+        <div><span>Estilo:</span> Pop-rock / Paramore (cover)</div>
+        <div><span>Duração do show:</span> 60–90 min <span class="combinar">(a combinar)</span></div>
+        <div><span>Passagem de som:</span> 45–60 min</div>
+        <div><span>Montagem / desmontagem:</span> ~30 min cada</div>
+        <div><span>Canais de palco:</span> 13 (ver Input List)</div>
+      </div>
+      <p style="margin-top:12px"><span class="tag">⚡ OPERAÇÃO FLEXÍVEL</span> Tocamos com amplificadores no palco <b>ou</b> tudo em linha (DI), com o sinal saindo direto das pedaleiras de guitarras e baixo — ideal para palcos menores e monitoração via in-ear.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span> Contato de produção</h2>
+      <ul>
+        <li><b>WhatsApp:</b> +55 48 99903-0613</li>
+        <li><b>E-mail:</b> bandariotfloripa@gmail.com</li>
+        <li><b>Instagram:</b> @riotriot.oficial</li>
+        <li class="muted">Responsável técnico no palco a combinar na confirmação do show.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span> PA &amp; estrutura — fornecido pela contratante</h2>
+      <ul>
+        <li><b>Sistema de PA</b> profissional compatível com o local (cobertura homogênea + subgraves), operado por técnico da casa.</li>
+        <li><b>Mesa de som</b> (preferencialmente digital) com no mínimo <b>16 canais</b> e <b>5 vias de monitor</b> (auxiliares) independentes.</li>
+        <li><b>Microfones, pedestais (girafas) e clamps</b> conforme o Input List.</li>
+        <li><b>Direct boxes (DI):</b> mínimo 3 — 1 baixo + 2 guitarras — quando a captação for em linha.</li>
+        <li><b>Praticável de bateria</b> (opcional, conforme o palco).</li>
+        <li><b>Iluminação</b> básica de palco. <span class="combinar">(a combinar)</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span> Backline</h2>
+      <h3>A banda traz</h3>
+      <ul>
+        <li>Instrumentos (guitarras, baixo) e <b>pedaleiras</b> com saída em linha/DI.</li>
+        <li>In-ears próprios, quando aplicável.</li>
+      </ul>
+      <h3>Necessário no palco <span class="combinar">(a combinar com a produção)</span></h3>
+      <ul>
+        <li><b>Bateria completa:</b> bumbo, caixa, tons, surdo, estantes, banco e pratos. <span class="combinar">(própria ou fornecida — a combinar)</span></li>
+        <li><b>Amplificadores:</b> 2 de guitarra + cabeçote/caixa de baixo. <span class="muted">Opcionais — operamos em linha quando não houver.</span></li>
+        <li><b>Monitores:</b> 5 wedges de chão <b>ou</b> sistema de in-ear (ver seção 5).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span> Monitoração</h2>
+      <p>Ideal: <b>5 vias independentes</b> (1 por músico). Mínimo: 4 vias (baixo e bateria podem compartilhar). A banda pode operar com <b>in-ear próprio</b> — nesse caso, fornecer os envios (sends) correspondentes.</p>
+      <div class="tw">
+        <table>
+          <tr><th>Via</th><th>Músico</th><th>Conteúdo principal</th></tr>
+          <tr><td class="n">1</td><td>Voz (Fernanda)</td><td>voz principal + leve guitarra/bateria</td></tr>
+          <tr><td class="n">2</td><td>Guitarra base (Beto)</td><td>guitarra base + voz</td></tr>
+          <tr><td class="n">3</td><td>Guitarra solo (Endy)</td><td>guitarra solo + voz</td></tr>
+          <tr><td class="n">4</td><td>Baixo (Gabriel)</td><td>baixo + bumbo + voz</td></tr>
+          <tr><td class="n">5</td><td>Bateria (Greg)</td><td>kit + baixo + voz</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span> Input List</h2>
+      <div class="tw">
+        <table>
+          <tr><th>#</th><th>Fonte</th><th>Captação</th><th>Pedestal</th><th>+48V</th><th>Obs.</th></tr>
+          <tr><td class="n">1</td><td>Bumbo</td><td>Mic dinâmico</td><td>Pequeno</td><td class="dash">—</td><td>ex.: AKG D6 / Beta 52</td></tr>
+          <tr><td class="n">2</td><td>Caixa</td><td>Mic dinâmico</td><td>Clamp</td><td class="dash">—</td><td>ex.: SM57</td></tr>
+          <tr><td class="n">3</td><td>Chimbal</td><td>Condensador</td><td>Pequeno</td><td>+48V</td><td>opcional</td></tr>
+          <tr><td class="n">4</td><td>Tom</td><td>Mic dinâmico (clip)</td><td>Clamp</td><td class="dash">—</td><td class="dash">—</td></tr>
+          <tr><td class="n">5</td><td>Surdo (floor)</td><td>Mic dinâmico (clip)</td><td>Clamp</td><td class="dash">—</td><td class="dash">—</td></tr>
+          <tr><td class="n">6</td><td>Overhead L</td><td>Condensador</td><td>Girafa</td><td>+48V</td><td>par estéreo</td></tr>
+          <tr><td class="n">7</td><td>Overhead R</td><td>Condensador</td><td>Girafa</td><td>+48V</td><td>par estéreo</td></tr>
+          <tr><td class="n">8</td><td>Baixo</td><td>DI (linha) e/ou mic no cabinet</td><td class="dash">—</td><td>se DI passiva</td><td>saída da pedaleira</td></tr>
+          <tr><td class="n">9</td><td>Guitarra base</td><td>Mic no cabinet e/ou DI</td><td>Pequeno</td><td class="dash">—</td><td>saída da pedaleira</td></tr>
+          <tr><td class="n">10</td><td>Guitarra solo</td><td>Mic no cabinet e/ou DI</td><td>Pequeno</td><td class="dash">—</td><td>saída da pedaleira</td></tr>
+          <tr><td class="n">11</td><td>Vocal (Fernanda)</td><td>Mic dinâmico</td><td>Girafa</td><td class="dash">—</td><td>voz principal · ex.: SM58 / Beta 58</td></tr>
+          <tr><td class="n">12</td><td>Backing (base + baixo)</td><td>Mic dinâmico</td><td>Girafa</td><td class="dash">—</td><td>compartilhado: Beto + Gabriel</td></tr>
+          <tr><td class="n">13</td><td>Backing (solo)</td><td>Mic dinâmico</td><td>Girafa</td><td class="dash">—</td><td>Endy</td></tr>
+        </table>
+      </div>
+      <p class="muted" style="margin-top:10px">O número de canais de bateria pode variar conforme o kit (toms e chimbal). Guitarras e baixo entram preferencialmente em linha (DI), via pedaleira.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span> Mapa de palco</h2>
+      <div class="plot">
+        <img src="assets/img/stageplot-ilustrado.jpg" alt="Mapa de palco — posições dos instrumentos">
+        <div class="cap">Visão da plateia para o palco. Posições e canais conforme o Input List.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">8</span> Energia</h2>
+      <ul>
+        <li>Tomadas <b>aterradas</b> próximas a cada posição (bateria, 2 guitarras, baixo, voz) — <b>mínimo 5 pontos</b>.</li>
+        <li>Rede local: <b>220V</b> (Florianópolis/SC). Réguas/extensões a combinar.</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <div class="doc-foot">
+    Riot! Riot! · Florianópolis/SC · <a href="https://riotriot.endy-silveira.workers.dev/">riotriot.endy-silveira.workers.dev</a> · @riotriot.oficial
+  </div>
+</div>
+
+</body>
+</html>
