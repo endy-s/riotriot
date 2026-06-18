@@ -83,6 +83,17 @@ def drumkit(cx, cy, num):
     s.append('</g>')
     return "".join(s)
 
+def dibox(cx, cy, label, num):
+    # pequena direct box (playback / linha)
+    w,h=32,22
+    s=[f'<g>']
+    s.append(f'<rect x="{cx-w/2}" y="{cy-h/2}" width="{w}" height="{h}" fill="#fff" stroke="{INK}" stroke-width="2.5" rx="3"/>')
+    s.append(f'<text x="{cx}" y="{cy+4}" text-anchor="middle" font-size="9" font-weight="bold" fill="{INK}">DI</text>')
+    s.append(f'<text x="{cx}" y="{cy+h/2+15}" text-anchor="middle" font-size="11" font-weight="bold" fill="{INK}">{label}</text>')
+    s.append(numbadge(cx+w/2+5, cy-h/2-5, num))
+    s.append('</g>')
+    return "".join(s)
+
 # ===== posicionamento por colunas =====
 # 4 zonas em x
 cx1 = STAGE_X + 130   # guit base
@@ -103,7 +114,10 @@ content.append(amp(cx4-42, y_back, "Guitarra solo", 6))
 content.append(amp(cx2-42, y_back, "Baixo", 5))
 
 # bateria (coluna 3, fundo)
-content.append(drumkit(cx3, y_back+30, 7))
+content.append(drumkit(cx3, y_back+30, 8))
+
+# VS / playback (sai da pedaleira do Endy — guit. solo, à direita)
+content.append(dibox(cx4-105, y_back+22, "VS", 7))
 
 # --- músicos linha do meio ---
 content.append(musician(cx1, y_mid, "GUIT.", "base + back vocal"))
