@@ -11,7 +11,7 @@ Audience: show producers/bookers + fans. **Language: Brazilian Portuguese only.*
 ## Stack & files
 - Plain **static HTML + CSS + vanilla JS**. No framework, no bundler, no build.
 - `index.html` — the whole page (all content/copy).
-- `rider.html` — unlisted technical rider served at `/rider` (`noindex`, no menu link); print-to-PDF. **Keep its content in sync with the site's Técnico section (input list / stage info); if they conflict, the most-recently-edited file wins.**
+- `rider.html` — unlisted technical rider served at `/rider` (`noindex`, no menu link); print-to-PDF. **Keep its content in sync with the site's Técnico section — sources, captação wording, stage info; if they conflict, the most-recently-edited file wins. Intentional exception: the rider's Input List uses the engineer-standard *drums-first* channel order (1–7 drums · 8 bass · 9–10 guitars · 11–13 vocals), while the site summary uses a *vocals-first* presentation order. Keep wording in sync, but NOT the row order.**
 - `styles.css` — all styles (brand vars in `:root`).
 - `main.js` — nav hamburger toggle, Técnico segmented control (Ilustrado/Técnico), Ao Vivo lightbox with prev/next (arrows + ←/→ keys + Esc). Smooth scroll is CSS (`scroll-behavior`).
 - `assets/img/` — photos & logos. `assets/stageplot.svg` — technical stage plot. `stageplot.py` — generator for that SVG.
