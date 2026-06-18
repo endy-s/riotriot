@@ -97,6 +97,11 @@ a{ color:inherit; }
 .gallery{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; margin-top:22px; }
 .gallery img{ width:100%; aspect-ratio:4/3; object-fit:cover; border:2px solid var(--ink); border-radius:8px; }
 
+/* Instagram reels (Ao Vivo) */
+.reels{ display:grid; grid-template-columns:repeat(2,minmax(0,360px)); justify-content:center; align-items:start; gap:16px; margin:26px auto 0; }
+.reels .instagram-media{ width:100% !important; min-width:0 !important; }
+@media (max-width:680px){ .reels{ grid-template-columns:minmax(0,360px); } }
+
 .plot{ margin-top:18px; }
 .plot-img{ width:100%; height:auto; border-radius:10px; display:block; }
 .plot-tecnico{ border:3px solid #000; background:#fff; }
