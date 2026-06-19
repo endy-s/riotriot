@@ -4,7 +4,7 @@ Single-page static website for the Paramore cover band **Riot! Riot!** (Florian�
 Audience: show producers/bookers + fans. **Language: Brazilian Portuguese only.**
 
 ## Live & hosting
-- **Live:** https://riotriot.endy-silveira.workers.dev
+- **Live:** https://riotriot.com.br (custom domain) · https://riotriot.endy-silveira.workers.dev (Cloudflare default, still works)
 - **Host:** Cloudflare Pages connected to this GitHub repo (`endy-s/riotriot`). **Every `git push` to `main` auto-deploys** (~1 min). There is no build step.
 - Future: custom domain `riotriot.com.br` (not set up yet — add via Cloudflare custom domain + DNS, no code change).
 
