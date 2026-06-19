@@ -104,8 +104,8 @@ a{ color:inherit; }
 
 /* discreet producer-only link to the full rider */
 .rider-link{ display:block; text-align:center; margin-top:24px; font-size:13px; color:var(--orange);
-  text-decoration:none; letter-spacing:.5px; font-weight:700; }
-.rider-link:hover{ text-decoration:underline; }
+  text-decoration:underline; letter-spacing:.5px; font-weight:700; }
+.rider-link:hover{ filter:brightness(1.12); }
 
 .plot{ margin-top:18px; }
 .plot-img{ width:100%; height:auto; border-radius:10px; display:block; }
