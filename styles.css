@@ -103,9 +103,10 @@ a{ color:inherit; }
 .reel .instagram-media{ min-width:0 !important; max-width:100% !important; margin:0 auto !important; }
 
 /* discreet producer-only link to the full rider */
-.rider-link{ display:block; text-align:center; margin-top:24px; font-size:13px; color:var(--orange);
-  text-decoration:underline; letter-spacing:.5px; font-weight:700; }
-.rider-link:hover{ filter:brightness(1.12); }
+.rider-link{ display:block; width:max-content; max-width:100%; margin:24px auto 0; font-size:13px;
+  color:var(--orange); text-decoration:underline; letter-spacing:.5px; font-weight:700;
+  transition:transform .15s, filter .15s; }
+.rider-link:hover{ filter:brightness(1.22); transform:scale(1.07); }
 
 .plot{ margin-top:18px; }
 .plot-img{ width:100%; height:auto; border-radius:10px; display:block; }
