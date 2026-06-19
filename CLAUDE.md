@@ -55,4 +55,7 @@ Photos come from the **drive-agent** over the local agent-bus (this session regi
 - **Gabriel's bio** — card currently reads "bio em breve".
 - **Greg's photo** is lower-res (719px) — swap when a hi-res original arrives.
 - **Press-kit PDF** download — button was removed; restore once the PDF is generated (the press-kit repo's `build.py`/Playwright pipeline).
-- **Custom domain** `riotriot.com.br`.
+- **Custom domain `riotriot.com.br` — LAUNCH IN PROGRESS:**
+  - Done: registered at Registro.br; nameservers → Cloudflare (`javier.ns.cloudflare.com` + `luciana.ns.cloudflare.com`); DNSSEC cleared; `riotriot.com.br` added as a Custom Domain on the Worker; site deployed with `og:image`/`og:url` already pointing to `https://riotriot.com.br`.
+  - Waiting on: nameserver delegation (Cloudflare "Active" email).
+  - To finish: (1) verify — `dig +short NS riotriot.com.br` (cloudflare = delegated, `auto.dns.br` = still pending), `dig +short DS riotriot.com.br` (empty = DNSSEC clear), `curl -sI https://riotriot.com.br` (expect 200 + valid SSL); (2) re-scrape the WhatsApp/Facebook share preview via the Facebook Sharing Debugger (og:image moved domains, so the cached card is stale); (3) optional `www.riotriot.com.br → riotriot.com.br` redirect (Cloudflare Redirect Rule — `www` was *not* added as a custom domain).
