@@ -99,8 +99,8 @@ a{ color:inherit; }
 
 /* Instagram reels (Ao Vivo) */
 .reels{ display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:18px; margin:36px auto 30px; }
-.reel{ width:336px; max-width:100%; }
-.reel .instagram-media{ min-width:0 !important; }
+.reel{ flex:0 1 336px; max-width:100%; display:flex; justify-content:center; }
+.reel .instagram-media{ min-width:0 !important; max-width:100% !important; margin:0 auto !important; }
 
 /* discreet producer-only link to the full rider */
 .rider-link{ display:block; text-align:center; margin-top:24px; font-size:13px; color:#8d877a;
