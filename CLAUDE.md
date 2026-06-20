@@ -53,7 +53,6 @@ Photos come from the **drive-agent** over the local agent-bus (this session regi
 - When Endy is "batching", **stage locally (commit, no push)** and only `git push` (= deploy) when he says so.
 
 ## Open TODOs
-- **Gabriel's bio** (coming in a few days) — `index.html` Membros card currently reads `Novo no baixo da Riot! Riot! — bio em breve. 🤘`; replace with real 2–3 line bio when supplied.
 - **"Mapa de Palco" image** (coming in a few days) — Endy will supply an updated illustrated stage plot; replace `assets/img/stageplot-ilustrado.jpg` (used both on the site Técnico section and in `/rider`). The numbered technical SVG (`stageplot.py` → `assets/stageplot.svg`) is separate — only regen it if channel numbers/positions change.
 - **Greg's photo** is lower-res (719px) — swap when a hi-res original arrives.
 - **Press-kit PDF** download — button was removed; restore once the PDF is generated (the press-kit repo's `build.py`/Playwright pipeline).
