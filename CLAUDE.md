@@ -15,6 +15,7 @@ Audience: show producers/bookers + fans. **Language: Brazilian Portuguese only.*
 - `styles.css` — all styles (brand vars in `:root`).
 - `main.js` — nav hamburger toggle, Técnico segmented control (Ilustrado/Técnico), Ao Vivo lightbox with prev/next (arrows + ←/→ keys + Esc). Smooth scroll is CSS (`scroll-behavior`).
 - `assets/img/` — photos & logos. `assets/stageplot.svg` — technical stage plot. `stageplot.py` — generator for that SVG.
+- `favicon.ico` (root, multi-size 16/32/48 from `favicon.png`) + `.well-known/security.txt` (RFC 9116, contact for vuln reports). **No `robots.txt` in the repo on purpose** — Cloudflare serves a **managed robots.txt** at the edge on `riotriot.com.br` (allows search, blocks AI-training crawlers: GPTBot/ClaudeBot/CCBot/Google-Extended/etc.). Don't add a repo `robots.txt` — it'd be overridden on the domain and only confuse. `/rider` is kept out of search by its `noindex` meta tag, not robots.
 
 ## Local preview
 ```
