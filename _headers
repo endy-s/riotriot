@@ -1,0 +1,16 @@
+# Cloudflare Pages reads this file from the deploy output dir (= repo root, no build step).
+# Applies security headers to every route on riotriot.com.br.
+# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  # Force HTTPS for 180 days. Conservative: includeSubDomains (www is HTTPS), NO preload.
+  # Preload is a one-way door — only add `; preload` + bump max-age to 31536000 if certain.
+  Strict-Transport-Security: max-age=15552000; includeSubDomains
+  # Don't let browsers MIME-sniff responses away from their declared Content-Type.
+  X-Content-Type-Options: nosniff
+  # Block other sites from framing the page (clickjacking).
+  X-Frame-Options: SAMEORIGIN
+  # Send full referrer same-origin, only the origin cross-origin, nothing on downgrade.
+  Referrer-Policy: strict-origin-when-cross-origin
+  # Disable browser features the site never uses.
+  Permissions-Policy: geolocation=(), camera=(), microphone=()
